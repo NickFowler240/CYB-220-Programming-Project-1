@@ -113,6 +113,7 @@ def CompareHash(password):
         return False
 
 def hub():
+    print("\nWelcome!")
     print("\nPlease select an item below:")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("1. Add new password")
@@ -129,11 +130,9 @@ def hub():
 #can't be run in IDLE, only in cmd
 
 i = 0
-previous = "old.txt"
 Masterfile = "maps.txt"
 CSV = "psda.csv"
 attempts = 0
-open(previous, 'w')
 
 while(True):
     try:
@@ -164,12 +163,6 @@ while(True):
                 CreateMaster(master)
                 break
 while (i == 0):
-    with open(previous) as file:
-        old = file.read()
-    if old != "y":
-        print("\nWelcome, newcomer!")
-    else:
-        print("\nWelcome back!")
     try:
         choice = hub()
         if (choice > 6 or choice < 1):
